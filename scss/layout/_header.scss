@@ -1,0 +1,641 @@
+@import '../scss-ultils/mixin';
+@import '../scss-ultils/variables';
+
+.bg {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.header {
+    margin-top: 2.4rem;
+    margin-bottom: 3.6rem;
+
+    .container {
+        .nav {
+            @include flex-row();
+
+            .nav-list {
+                @include flex-row-center();
+                column-gap: 3rem;
+
+                .nav-link {
+                    color: $clr-primary-black-2;
+                    font-size: $font-size-m;
+                    line-height: 1.878rem;
+                    transition: $transition-fast;
+                    -webkit-transition: $transition-fast;
+                    -moz-transition: $transition-fast;
+                    -ms-transition: $transition-fast;
+                    -o-transition: $transition-fast;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        width: 0;
+                        height: 0.1rem;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        background: $clr-primary-black-2;
+                        transition: $transition-fast;
+                        -webkit-transition: $transition-fast;
+                        -moz-transition: $transition-fast;
+                        -ms-transition: $transition-fast;
+                        -o-transition: $transition-fast;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+
+                    &:active {
+                        @include click();
+                    }
+
+                    &::selection {
+                        background: $clr-primary-gray;
+                    }
+                }
+
+                .first {
+                    padding: 0.6rem 0.8rem;
+                    background: $clr-primary-green;
+                    border-radius: $radius;
+                    -webkit-border-radius: $radius;
+                    -moz-border-radius: $radius;
+                    -ms-border-radius: $radius;
+                    -o-border-radius: $radius;
+
+                    &:hover::after {
+                        width: 0;
+                    }
+
+                    &:hover {
+                        background: $clr-hover-yellow;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .nav-search {
+                width: 52.5rem;
+                @include flex-row-center();
+                column-gap: 1.2rem;
+                background: $clr-primary-gray-2;
+                border-radius: 1rem;
+                -webkit-border-radius: 1rem;
+                -moz-border-radius: 1rem;
+                -ms-border-radius: 1rem;
+                -o-border-radius: 1rem;
+                padding: 1.2rem 0 1.2rem 1.21rem;
+                transition: $transition-fast;
+                -webkit-transition: $transition-fast;
+                -moz-transition: $transition-fast;
+                -ms-transition: $transition-fast;
+                -o-transition: $transition-fast;
+
+                &:hover {
+                    transform: scale(1.02);
+                    -webkit-transform: scale(1.02);
+                    -moz-transform: scale(1.02);
+                    -ms-transform: scale(1.02);
+                    -o-transform: scale(1.02);
+                }
+
+                &:active {
+                    transform: scale(0.95);
+                    -webkit-transform: scale(0.95);
+                    -moz-transform: scale(0.95);
+                    -ms-transform: scale(0.95);
+                    -o-transform: scale(0.95);
+
+                    input,
+                    i {
+                        color: $clr-primary-red;
+                    }
+                }
+
+                i {
+                    color: $clr-primary-gray-5;
+                    font-size: $font-size-m;
+                    transition: $transition-fast;
+                    -webkit-transition: $transition-fast;
+                    -moz-transition: $transition-fast;
+                    -ms-transition: $transition-fast;
+                    -o-transition: $transition-fast;
+                    cursor: pointer;
+                }
+
+                input {
+                    color: $clr-primary-black-3;
+                    font-size: $font-size-m;
+                    line-height: 2.2rem;
+                    transition: $transition-fast;
+                    -webkit-transition: $transition-fast;
+                    -moz-transition: $transition-fast;
+                    -ms-transition: $transition-fast;
+                    -o-transition: $transition-fast;
+                }
+            }
+        }
+
+        .sign-in-block {    
+            position: absolute;
+            left: 25%;
+            top: 12%;
+            z-index: 3;
+
+            width: 66rem;
+
+            background: $clr-white;
+            border-radius: 2rem;
+            -webkit-border-radius: 2rem;
+            -moz-border-radius: 2rem;
+            -ms-border-radius: 2rem;
+            -o-border-radius: 2rem;
+
+            padding: 6.5rem 6.5rem 5.5rem 6.5rem;
+            .form {
+                .form-title {
+                    color: $clr-black;
+                    font-size: 3rem;
+                    font-weight: 600;
+                    line-height: 3.522rem;
+                    text-align: center;
+
+                    margin-bottom: 4.5rem;
+                }
+
+                label {
+                    margin-bottom: 1.6rem;
+
+                    color: $clr-black;
+                    font-size: $font-size-l;
+                    font-weight: 500;
+                    line-height: 2.459rem;
+
+                    display: block;
+                }
+
+                .first-input {
+                    padding: 1.6rem;
+                    background: $clr-primary-gray-2;
+                    border: 0.1rem solid $clr-primary-gray-6;
+                    width: 53rem;
+
+                    color: $clr-primary-black-8;
+                    font-size: $font-size-m;
+                    line-height: 2.186rem;
+
+                    transition: $transition-fast;
+                    -webkit-transition: $transition-fast;
+                    -moz-transition: $transition-fast;
+                    -ms-transition: $transition-fast;
+                    -o-transition: $transition-fast;
+
+                    margin-bottom: 4.5rem;
+
+                    &:hover {
+                        transform: scale(1.02);
+                        -webkit-transform: scale(1.02);
+                        -moz-transform: scale(1.02);
+                        -ms-transform: scale(1.02);
+                        -o-transform: scale(1.02);
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
+                        -webkit-transform: scale(0.95);
+                        -moz-transform: scale(0.95);
+                        -ms-transform: scale(0.95);
+                        -o-transform: scale(0.95);
+                        color: $clr-primary-red;
+                    }
+                }
+
+                .form-input {
+                    padding: 1.6rem;
+                    background: $clr-primary-gray-2;
+                    border: 0.1rem solid $clr-primary-gray-6;
+                    width: 53rem;
+
+                    color: $clr-primary-black-8;
+                    font-size: $font-size-m;
+                    line-height: 2.186rem;
+
+                    transition: $transition-fast;
+                    -webkit-transition: $transition-fast;
+                    -moz-transition: $transition-fast;
+                    -ms-transition: $transition-fast;
+                    -o-transition: $transition-fast;
+
+                    margin-bottom: 0.4rem;
+
+                    input {
+                        width: 90%;
+                        transition: $transition-fast;
+                        -webkit-transition: $transition-fast;
+                        -moz-transition: $transition-fast;
+                        -ms-transition: $transition-fast;
+                        -o-transition: $transition-fast;
+                    }
+
+                    @include flex-row();
+
+                    i {
+                        cursor: pointer;
+                        color: $clr-primary-green;
+                    }
+
+                    &:hover {
+                        transform: scale(1.02);
+                        -webkit-transform: scale(1.02);
+                        -moz-transform: scale(1.02);
+                        -ms-transform: scale(1.02);
+                        -o-transform: scale(1.02);
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
+                        -webkit-transform: scale(0.95);
+                        -moz-transform: scale(0.95);
+                        -ms-transform: scale(0.95);
+                        -o-transform: scale(0.95);
+
+                        input {
+                            color: $clr-primary-red;
+                        }
+                    }
+                }
+
+                .form-forgot {
+                    color: $clr-primary-blue;
+                    font-size: $font-size-m;
+                    font-weight: 500;
+                    line-height: 1.878rem;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                    &:active {
+                        @include click();
+                    }
+                }
+
+                .primary-btn {
+                    margin-top: 4.5rem;
+                    margin-bottom: 4.5rem;
+                    display: block;
+                }
+
+                .form-last {
+                    text-align: center;
+                    color: $clr-primary-black;
+                    font-size: $font-size-l;
+
+                    a {
+                        color: $clr-primary-blue;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+
+                        &:active {
+                            @include click();
+                        }
+                    }
+                }
+            }
+        }
+
+        .register-block {
+            position: absolute;
+            left: 25%;
+            top: 12%;
+            z-index: 3;
+
+            background: $clr-white;
+            border-radius: 2rem;
+            -webkit-border-radius: 2rem;
+            -moz-border-radius: 2rem;
+            -ms-border-radius: 2rem;
+            -o-border-radius: 2rem;
+
+            padding: 6.5rem 6.5rem 3.8rem 6.5rem;
+
+            .form {
+                .form-title {
+                    color: $clr-black;
+                    font-size: 3rem;
+                    font-weight: 600;
+                    line-height: 3.522rem;
+                    text-align: center;
+
+                    margin-bottom: 4.5rem;
+                }
+
+                .form-input {
+                    padding: 1.6rem;
+                    background: $clr-primary-gray-2;
+                    border: 0.1rem solid $clr-primary-gray-6;
+                    width: 53rem;
+
+                    color: $clr-primary-black-8;
+                    font-size: $font-size-m;
+                    line-height: 2.186rem;
+
+                    transition: $transition-fast;
+                    -webkit-transition: $transition-fast;
+                    -moz-transition: $transition-fast;
+                    -ms-transition: $transition-fast;
+                    -o-transition: $transition-fast;
+
+                    margin-bottom: 2.4rem;
+
+                    input {
+                        width: 90%;
+                        transition: $transition-fast;
+                        -webkit-transition: $transition-fast;
+                        -moz-transition: $transition-fast;
+                        -ms-transition: $transition-fast;
+                        -o-transition: $transition-fast;
+                    }
+
+                    @include flex-row();
+
+                    i {
+                        cursor: pointer;
+                        color: $clr-primary-green;
+                    }
+
+                    &:hover {
+                        transform: scale(1.02);
+                        -webkit-transform: scale(1.02);
+                        -moz-transform: scale(1.02);
+                        -ms-transform: scale(1.02);
+                        -o-transform: scale(1.02);
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
+                        -webkit-transform: scale(0.95);
+                        -moz-transform: scale(0.95);
+                        -ms-transform: scale(0.95);
+                        -o-transform: scale(0.95);
+
+                        input {
+                            color: $clr-primary-red;
+                        }
+                    }
+                }
+
+                label {
+                    margin-bottom: 1.6rem;
+
+                    color: $clr-black;
+                    font-size: $font-size-l;
+                    font-weight: 500;
+                    line-height: 2.459rem;
+
+                    display: block;
+                }
+
+                .input {
+                    padding: 1.6rem;
+                    background: $clr-primary-gray-2;
+                    border: 0.1rem solid $clr-primary-gray-6;
+                    width: 53rem;
+
+                    color: $clr-primary-black-8;
+                    font-size: $font-size-m;
+                    line-height: 2.186rem;
+
+                    transition: $transition-fast;
+                    -webkit-transition: $transition-fast;
+                    -moz-transition: $transition-fast;
+                    -ms-transition: $transition-fast;
+                    -o-transition: $transition-fast;
+
+                    margin-bottom: 4.5rem;
+
+                    &:hover {
+                        transform: scale(1.02);
+                        -webkit-transform: scale(1.02);
+                        -moz-transform: scale(1.02);
+                        -ms-transform: scale(1.02);
+                        -o-transform: scale(1.02);
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
+                        -webkit-transform: scale(0.95);
+                        -moz-transform: scale(0.95);
+                        -ms-transform: scale(0.95);
+                        -o-transform: scale(0.95);
+                        color: $clr-primary-red;
+                    }
+                }
+
+                .form-pred {
+                    color: $clr-primary-black;
+                    font-size: $font-size-l;
+                    text-align: left;
+                    max-width: 53.8rem;
+                    padding-left: 4.9rem;
+                    a {
+                        color: $clr-primary-blue;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .primary-btn {
+                    display: block;
+                    margin-top: 4.5rem;
+                    margin-bottom: 2.4rem;
+                }
+
+                .form-last {
+                    text-align: center;
+                    color: $clr-primary-black;
+                    font-size: $font-size-l;
+                    a {
+                        color: $clr-primary-blue;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .header {
+        .container {
+            .nav {
+                display: none;
+            }
+
+            .nav-phone {
+                @include flex-column();
+                row-gap: 1.4rem;
+
+                .nav-top {
+                    @include flex-row();
+
+                    .nav-right {
+                        @include flex-row-center();
+                        column-gap: 1.2rem;
+
+                        .nav-search {
+                            cursor: pointer;
+                            padding: 1.15rem;
+                            border: 0.1rem solid $clr-primary-green;
+                            border-radius: $radius;
+                            -webkit-border-radius: $radius;
+                            -moz-border-radius: $radius;
+                            -ms-border-radius: $radius;
+                            -o-border-radius: $radius;
+                            width: 4.5rem;
+                            height: 4.5rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            transition: $transition-fast;
+                            -webkit-transition: $transition-fast;
+                            -moz-transition: $transition-fast;
+                            -ms-transition: $transition-fast;
+                            -o-transition: $transition-fast;
+
+                            &:hover,
+                            &:active {
+                                border: 0.1rem solid $clr-hover-yellow;
+                            }
+
+                            i {
+                                color: $clr-primary-gray-5;
+                                font-size: $font-size-m;
+                            }
+                        }
+                    }
+                }
+
+                .nav-bottom {
+                    margin-top: 1.4rem;
+
+                    .nav-list {
+                        @include flex-row-center();
+                        column-gap: 1.05rem;
+
+                        .nav-link {
+                            padding: 1.2rem 2.5rem;
+                            border: 0.1rem solid $clr-primary-green;
+                            border-radius: $radius;
+                            -webkit-border-radius: $radius;
+                            -moz-border-radius: $radius;
+                            -ms-border-radius: $radius;
+                            -o-border-radius: $radius;
+                            color: $clr-primary-black-7;
+                            font-size: $font-size-s;
+                            font-weight: 500;
+                            line-height: 1.644rem;
+                            transition: $transition-fast;
+                            -webkit-transition: $transition-fast;
+                            -moz-transition: $transition-fast;
+                            -ms-transition: $transition-fast;
+                            -o-transition: $transition-fast;
+
+                            &:hover,
+                            &:active {
+                                background: $clr-primary-green;
+                            }
+                        }
+
+                        .first {
+                            padding: 1.2rem 0.85rem;
+                            background: $clr-primary-green;
+                        }
+                    }
+                }
+            }
+
+            .sign-in-block {
+                left: 0;
+                top: 25%;
+
+                width: 37.4rem;
+
+                padding: 2rem 1.35rem 2.695rem 1.35rem;
+                .close-btn {
+                    display: none;
+                }
+
+                .form {
+                    .form-title {
+                        font-size: $font-size-x;
+                        line-height: 2.348rem;
+                    }
+
+                    .first-input {
+                        width: 34.8rem;
+                    }
+
+                    .form-input {
+                        width: 34.8rem;
+                    }
+
+                    .primary-btn {
+                        margin-bottom: 2.4rem;
+                    }
+
+                    .form-last {
+                        font-size: $font-size-s;
+                        line-height: 1.92rem;
+                    }
+                }
+            }
+
+            .register-block {
+                left: 0;
+                top: 25%;
+
+                padding: 2rem 1.3rem;
+                .close-btn {
+                    display: none;
+                }
+                .form {
+                    .form-title {
+                        font-size: $font-size-x;
+                        line-height: 2.348rem;
+                    }
+    
+                    .input {
+                        width: 34.8rem;
+                    }
+    
+                    .form-input {
+                        width: 34.8rem;
+                    }
+
+                    .form-pred {
+                        display: none;
+                    }
+
+                    .form-last {
+                        font-size: $font-size-s;
+                        line-height: 1.912rem;
+                    }
+                }
+            }
+        }
+    }
+}

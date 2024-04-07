@@ -1,0 +1,214 @@
+@import '../scss-ultils/mixin';
+@import '../scss-ultils/variables';
+
+.info {
+    margin-bottom: $margin-regular;
+    .info__left,
+    .info__right {
+        position: absolute;
+        display: none;
+    }
+
+    .info__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 47.2rem);
+        grid-gap: 1rem;
+
+        .info__card {
+            transition: $transition-fast;
+            -webkit-transition: $transition-fast;
+            -moz-transition: $transition-fast;
+            -ms-transition: $transition-fast;
+            -o-transition: $transition-fast;
+            height: 33.1rem;
+            padding: 2rem;
+
+            .card-date,
+            .card-heart,
+            .ioga,
+            .middle-ioga {
+                cursor: pointer;
+                transition: $transition-fast;
+                -webkit-transition: $transition-fast;
+                -moz-transition: $transition-fast;
+                -ms-transition: $transition-fast;
+                -o-transition: $transition-fast;
+            }
+
+            .card-top {
+                @include flex-row();
+                margin-bottom: 14.9rem;
+
+                .card-date {
+                    display: inline-block;
+                    cursor: pointer;
+                    text-align: center;
+                    background: $clr-white;
+                    border-radius: 1.2rem;
+                    -webkit-border-radius: 1.2rem;
+                    -moz-border-radius: 1.2rem;
+                    -ms-border-radius: 1.2rem;
+                    -o-border-radius: 1.2rem;
+                    padding: 0.546rem 0.983rem 0.554rem 0.983rem;
+
+                    h2 {
+                        color: $clr-primary-black-7;
+                        font-size: $font-size-xl;
+                        font-weight: 700;
+                        line-height: 2.8rem;
+                    }
+
+                    p {
+                        color: $clr-primary-black-7;
+                        font-size: $font-size-ss;
+                    }
+
+                    &:hover {
+                        background: $clr-hover-yellow;
+                    }
+
+                    &:active {
+                        @include click();
+                    }
+                }
+
+                .card-heart {
+                    padding: 1.125rem 0.875rem 0.625rem 0.875rem;
+                    background: $clr-primary-black-5;
+                    border-radius: 50%;
+                    width: 5rem;
+                    height: 5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+
+                    i {
+                        font-size: $font-size-xl;
+                        color: $clr-white;
+                        transition: $transition-fast;
+                        -webkit-transition: $transition-fast;
+                        -moz-transition: $transition-fast;
+                        -ms-transition: $transition-fast;
+                        -o-transition: $transition-fast;
+                    }
+
+                    &:hover {
+                        i {
+                            color: $clr-primary-red;
+                        }
+                    }
+
+                    &:active {
+                        @include click();
+                    }
+                }
+            }
+
+            .ioga {
+                padding: 0.7rem 1.5rem;
+                background: $clr-white;
+                border-radius: 0.8rem;
+                -webkit-border-radius: 0.8rem;
+                -moz-border-radius: 0.8rem;
+                -ms-border-radius: 0.8rem;
+                -o-border-radius: 0.8rem;
+
+                width: 9rem;
+
+                @include flex-row-center();
+                column-gap: 0.4rem;
+
+                color: $clr-black;
+                font-size: $font-size-m;
+
+                margin-bottom: $margin-xxsmall;
+                &:hover {
+                    background: $clr-hover-yellow;
+                }
+
+                &:active {
+                    @include click();
+                }
+            }
+
+            .middle-ioga {
+                padding: 0.6rem 1.6rem;
+                background: $clr-primary-black-5;
+                border-radius: 5rem;
+                -webkit-border-radius: 5rem;
+                -moz-border-radius: 5rem;
+                -ms-border-radius: 5rem;
+                -o-border-radius: 5rem;
+                color: $clr-white;
+                font-size: 2.8rem;
+                font-weight: 700;
+                &:hover {
+                    background: $clr-hover-yellow;
+                }
+
+                &:active {
+                    @include click();
+                }
+            }
+
+            &:first-child {
+                background: url('../img/images/Rectangle\ 2.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            &:nth-child(2) {
+                background: url('../img/images/Rectangle\ 3.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            &:last-child {
+                background: url('../img/images/Rectangle\ 4.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+@media (max-width: 375px) {
+    .info {
+        margin-bottom: 2.8rem;
+        .info__grid {
+            grid-template-columns: repeat(3, 31rem);
+            overflow: hidden;
+            .info__card {
+                padding: 1.4rem;
+                height: 29rem;
+                .card-top {
+                    margin-bottom: 14.4rem;
+                    .card-date {
+                        padding: 0 0.743rem 0.1rem 0.8rem;
+                        height: 4.4rem;
+                        h2 {
+                            font-size: $font-size-x;
+                        }
+
+                        p {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+
+                .ioga {
+                    padding: 0.7rem 1rem;
+                    margin-bottom: 1.6rem;
+                }
+
+                .middle-ioga {
+                    font-size: $font-size-l;
+
+                }
+            }
+        }
+    }
+}

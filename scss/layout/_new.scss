@@ -1,0 +1,65 @@
+@import '../scss-ultils/mixin';
+@import '../scss-ultils/variables';
+
+.new {
+    margin-bottom: $margin-regular;
+
+    .new__title {
+        margin-bottom: $margin-small;
+
+        @include flex-row();
+
+        a {
+            color: $clr-black;
+            font-size: $font-size-l;
+            font-weight: 600;
+            @include flex-row-center();
+            column-gap: 0.4rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:active {
+                @include click();
+            }
+        }
+    }
+
+    .new__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 42rem);
+        grid-gap: 1rem;
+
+        .left,
+        .right {
+            position: absolute;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .new {
+        margin-bottom: 2.2rem;
+
+        .new__title {
+            display: none;
+        }
+
+        .new__title-mobile {
+            @include flex-row();
+            margin-bottom: 2.4rem;
+        }
+
+        .new__grid {
+            grid-template-columns: repeat(3, 31rem);
+            grid-gap: 0.8rem;
+            overflow: hidden;
+
+            .left,
+            .right {
+                display: none;
+            }
+        }
+    }
+}

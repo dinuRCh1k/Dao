@@ -1,0 +1,114 @@
+@import './mixin';
+$clr-white: #FFF;
+$clr-black: #000;
+
+$clr-primary-gray: #D9D9D9;
+$clr-primary-gray-2: #EDEDED;
+$clr-primary-gray-3: #C7C7C7;
+$clr-primary-gray-4: #585858;
+$clr-primary-gray-5: #88888C;
+$clr-primary-gray-6: #F1F1F1;
+$clr-primary-gray-7: #F2F2F2;
+$clr-primary-gray-8: #F0F0F0CC;
+$clr-primary-gray-9: #F6F6F60A;
+
+$clr-primary-blue: #23A0E7;
+$clr-primary-green: #BDDA13;
+$clr-primary-red: #F72F2F;
+
+$clr-primary-black: #302F2F;
+$clr-primary-black-2: #424242;
+$clr-primary-black-3: #3C3C4399;
+$clr-primary-black-4: #0000003B;
+$clr-primary-black-5: #00000033;
+$clr-primary-black-6: #00000099;
+$clr-primary-black-7: #1E1E1E;
+$clr-primary-black-8: #00000080;
+$clr-primary-black-9: #0000004D;
+$clr-primary-black-10: #00000014;
+$clr-primary-black-11: #3C3C3C;
+$clr-primary-black-12: #202020;
+$clr-primary-black-13:  #292929;
+$clr-primary-black-14:  #2C3340E5;
+
+$clr-hover-yellow: hsl(42, 78%, 60%);
+
+$border-color: #B6B6B6;
+
+$font-size-xxl: 3.4rem;
+$font-size-xl: 2.4rem;
+$font-size-x: 2rem;
+$font-size-l: 1.8rem;
+$font-size-m: 1.6rem;
+$font-size-s: 1.4rem;
+$font-size-ss: 1.2rem;
+
+$margin-xxsmall: 1rem;
+$margin-xsmall: 2rem;
+$margin-small: 3rem;
+$margin-regular: 4rem;
+$margin-medium: 5rem;
+$margin-xmedium: 6rem;
+$margin-xxmedium: 7rem;
+$margin-large: 10rem;
+
+$padding-xxsmall: 1rem;
+$padding-xsmall: 2rem;
+$padding-small: 3rem;
+$padding-regular: 4rem;
+$padding-medium: 5rem;
+$padding-xmedium: 6rem;
+$padding-xxmedium: 7rem;
+$padding-large: 10rem;
+
+$transition-fast: 0.3s ease-out;
+$transition-medium: 0.5s ease-out;
+$transition-long: 0.8s ease-out;
+
+$radius: 5rem;
+
+$shadow: -0.1rem 6px 10px 5px 0px rgba(0,0,0,0.75);
+
+$first-family: "Raleway", sans-serif;
+$second-family: "Saira Stencil One", sans-serif;
+
+$container-width: 1384px;
+
+//Container
+.container {
+    max-width: $container-width;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 375px) {
+    .container {
+        max-width: 351px;
+    }
+}
+
+//HTML,BODY
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: $first-family;
+}
+
+//none
+.none {
+    display: none;
+}
+
+//title
+.title {
+    color: $clr-primary-black-7;
+    font-size: $font-size-xxl;
+    font-weight: 600;
+    line-height: 3.992rem;
+    @include respond-to("phone") {
+        font-size: $font-size-x;
+        line-height: 2.348rem;
+    }
+}
